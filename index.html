@@ -22,23 +22,25 @@
 
     <main>
       <section class="parte1">
-        <textarea class="text-area" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
+        <textarea id="textArea" class="text-area" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
 
         <div class="alerta">
           <p><img src="./imagens/iconeExclamacao.png">apenas letras minúsculas e sem acentos.</p>
         </div>
 
         <div class="botoes_parte1">
-          <button class="encriptar">Criptografar</button>
-          <button class="desencriptar">Descriptografar</button>
+          <button id="btnCriptografar" class="botaoCriptografar">Criptografar</button>
+          <button id="btnDescriptografar" class="botaoDescriptografar">Descriptografar</button>
         </div>
       </section>
 
-      <section class="parte2">
-        <div>
-          <img src="/imagens/boneco.png">
-          <h1>Nenhuma mensagem encontrada.</h1>
-          <p>Digite o texto que você deseja Criptografar ou Descriptografar</p>
+      <section id="resultado" class="resultado ajustes">
+        <div >
+          <img id="boneco" src="/imagens/boneco.png" class="imagemBoneco" alt="boneco
+          ">
+          <textarea id="textAreaFinal" class="textoFinal"  placeholder="Nenhuma mensagem encontrada!"></textarea>
+          <p id="dgtTexto" class="digiteTexto">Digite o texto que você deseja Criptografar ou Descriptografar</p>
+          <button id="btnCopiar" class="botaoCopiar"></button>
       </section>
     </main>
 
