@@ -1,0 +1,158 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+}
+
+.logoLina {
+    margin-left: 10px;
+    padding-top: 10px;
+    width: 60%;
+}
+
+body {
+    background: #E5E5E5;
+    margin: 0;
+    padding: 40px;
+}
+
+
+main {
+    display: flex;
+    justify-content: space-between;
+    height: 70vh;
+    width: 90vh;
+    margin: 5vh auto;
+}
+
+.parte1 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 60vw;
+}
+
+.cabecalho {  
+    margin-left: 10px;
+    padding-top: 10px;
+    width: 15%;
+    line-height: 50%;
+}
+
+.text-area {
+    background-color: transparent;
+    border: none;
+    box-sizing: border-box;
+    color: #0A3871;
+    height: 80%;
+    max-height: 80%;
+    max-width: 100%;
+    margin-bottom: 16px;
+    padding: 16px;
+    font-size: 32px;
+    text-transform: lowercase;
+    resize: none;
+
+}
+
+::placeholder {
+    color: #0A3871;
+}
+    
+.text-area:focus {
+    outline: none;
+}
+
+.alerta {
+    color: #495057;
+    align-items: center;
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.alerta img {
+    margin-right: 8px;
+}
+
+.botoes_parte1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.parte1 button {
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 24px;
+    width: 48%;
+  }
+
+.encriptar {
+    background-color: #0A3871;
+    border: none;
+    color: #E5E5E5;
+    cursor: pointer;
+}
+
+.desencriptar {
+    background-color: transparent;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+    cursor: pointer;
+}
+
+.parte2 {
+    background: #FFFFFF;
+    border-radius: 24px;
+    box-shadow: 0px 24px 32px -8px #00000008;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 32px;
+    height: 70vh;
+    width: 25vw;
+ }
+ 
+ .parte2 img {}
+ 
+ .parte2 h1 {
+    font-weight: 700;
+    font-size: 24px;
+    margin: 16px 0;
+ }
+ 
+ .parte2 p {
+    font-size: 16px;
+ }
+
+ .parte2_resultado {
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 16px;
+    height: 90%;
+    line-height: 150%;
+    overflow: auto;
+ }
+ 
+ .parte2_resultado_button {
+    background-color: transparent;
+    border: 1px solid #0A3871;
+    border-radius: 24px;
+    cursor: pointer;
+    color: #0A3871;
+    font-size: 16px;
+    padding: 24px;
+    transition: .5s;
+    width: 100%;
+ }
+
+ .copiar:hover {
+    background-color: #E5E5E5;
+    border: 1px solid #0A3871;
+    color: #0A3871;
+    transition: .5s;
+ }
+ 

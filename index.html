@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"/>
+    
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="./css/desktop.css" />
+
+    <title>Decodificador</title>
+
+  </head>
+
+  <body>
+    <header class="cabecalho">
+      <img class="logoLina" src="./imagens/logo.png" alt="logo Lina_developer" />
+    </header>
+
+    <main>
+      <section class="parte1">
+        <textarea class="text-area" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
+
+        <div class="alerta">
+          <p><img src="./imagens/iconeExclamacao.png">apenas letras minúsculas e sem acentos.</p>
+        </div>
+
+        <div class="botoes_parte1">
+          <button class="encriptar">Criptografar</button>
+          <button class="desencriptar">Descriptografar</button>
+        </div>
+      </section>
+
+      <section class="parte2">
+        <div>
+          <img src="/imagens/boneco.png">
+          <h1>Nenhuma mensagem encontrada.</h1>
+          <p>Digite o texto que você deseja Criptografar ou Descriptografar</p>
+      </section>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
