@@ -1,108 +1,106 @@
-/* Regras Codificador: 
-"e" é convertido para "enter" 
-"i" é convertido para "imes"
-"a" é convertido para "ai"
-"o" é convertido para "ober"
-"u" é convertido para "ufat"
-Apenas letras minúsculas
-Não permite acentuação   
-*/
+const texto1 = document.getElementById("textArea");
+const textAreaFinal = document.getElementById("textAreaFinal");
+const dgtTexto = document.getElementById("dgtTexto");
+const boneco = document.getElementById("boneco");
 
-/* Regras Decodificador: 
-"enter" é convertido para "e" 
-"imes" é convertido para "i"
-"ai" é convertido para "a"
-"ober" é convertido para "o"
-"ufat" é convertido para "u"
-Apenas letras minúsculas
-Não permite acentuação     
-*/
 
-const textoEntrada = document.getElementById("textoEntrada");
-const btnEncriptar = document.getElementById("btnEncriptar");
-const btnDesencriptar = document.getElementById("btnDesencriptar");
-const textoFinal = document.getElementById("textoFinal");
-const btnCopiar = document.getElementById("btnCopiar");
 
-const munheco = document.getElementById("munheco");
-const ingTexto = document.getElementById("ingTexto");
-const resultados= document.getElementById("resultados");
+/* INVALIDANDO ENTRADA DE ACENTOS E CARACTERES ESPECIAIS diretamente no input de digitação */
+texto1.addEventListener("input", function() {
+    this.value = this.value.replace(/[áéíóúçàèìòùãõâêîôûüäëöï!@#$%ˆ&*(_+=_{|\"':;?/.,><})]/gi,"");
+})
 
-let remplazos=[
+/* REGRAS DA CRIPTOGRAFIA */
+let conversoes = [
     ["a","ai"],
     ["e","enter"],
     ["i","imes"],
     ["o","ober"],
     ["u","ufat"]
-]
+];
 
-const reset = () => {
-	textoEntrada.value = "";
-    textoEntrada.style.height = "auto";
-	textoFinal.innerHTML = "";
-	resultados.classList.remove("ajuste")
-	textoFinal.classList.remove("ajustar");
-	textoFinal.placeholder = "Ningún mensaje fue encontrado";
-	btnCopiar.display="none";
-	textoEntrada.focus();
-};
+console.table(conversoes);
 
-btnEncriptar.addEventListener("click", () =>{   
+function estilosDeSaida(evento) {
+    if(evento == true) {
+        textAreaFinal.style.display = 'none';
+		boneco.style.display = 'none';
+		dgtTexto.style.fontSize = '1.5rem';
+		dgtTexto.style.margin = '1.5rem';
+    } else {
+        textAreaFinal.style.display = 'inline-block';
+        boneco.style.display = 'inline-block';
+		dgtTexto.style.fontSize = '1.0rem';
+		dgtTexto.style.margin = '0.5rem';
+	}
+}
 
-    const texto = textoEntrada.value.toLocaleLowerCase();
+/* ________________FUNÇÕES DOS BOTÕES________________ */
 
-    function encriptar(newText) {
-        for (let i = 0; i < remplazos.length; i++) {
-            if (newText.includes(remplazos[i][0])) {
-                newText = newText.replaceAll(remplazos[i][0], remplazos[i][1]);
-            }
+// Type 1
+/* document.getElementById('execCopy').addEventListener('click', execCopy);
+function execCopy() {
+  document.querySelector("#input").select();
+  document.execCommand("copy");
+} */
+
+// Type 2
+/* document.getElementById('clipboardCopy').addEventListener('click', clipboardCopy);
+async function clipboardCopy() {
+    let text = document.querySelector("#input").value;
+  await navigator.clipboard.writeText(text);
+} */
+
+/* BOTÃO COPIAR */
+
+/* document.getElementById('btnCopiar').addEventListener('click', btnCopiar);
+ */function btnCopiar() {
+    texto1.value = '';
+    /* texto1.innerHTML = dgtTexto.value */
+    dgtTexto.innerHTML = "Digite o texto que você deseja criptografar ou descriptografar";
+    estilosDeSaida(false);
+
+/*     document.querySelector("#textAreaFinal").select();
+    document.execCommand("copy", ''); */
+}
+
+
+/* BOTÃO CRIPTOGRAFAR */
+function btnCriptografar() {
+    /* const textoCriptofradado = criptografar(texto1.value); */
+    dgtTexto.innerHTML = criptografar(texto1.value);
+    /* texto1.value = ''; */
+    estilosDeSaida(true);
+}
+
+/* BOTÃO DESCRIPTOGRAFAR */
+function btnDescriptografar() {
+        /* const textoDesriptofradado = criptografar(texto1.value); */
+    dgtTexto.innerHTML = descriptografar(texto1.value);
+    /* texto1.value = ''; */
+    estilosDeSaida(true);
+}
+
+/* FUNÇÕES DE CRIPTOGRAFIA */
+
+function criptografar(codificarTexto) {
+    codificarTexto = codificarTexto.toLowerCase()
+
+    for(let i = 0; i < conversoes.length; i ++) {
+        if(codificarTexto.includes(conversoes[i][0])) {
+            codificarTexto = codificarTexto.replaceAll(conversoes[i][0], conversoes[i][1]);
         }
-        return newText;
     }
+    return codificarTexto;
+}
 
-    const textoEncriptado = encriptar(texto);
+function descriptografar(decodificarTexto) {
+    decodificarTexto = decodificarTexto.toLowerCase()
 
-    textoFinal.innerHTML = textoEncriptado;
-
-    textoEntrada.value="";
-    munheco.style.display="none";
-    ingTexto.style.display="none";
-    btnCopiar.style.display="block";
-
-    resultados.classList.add("ajustes");
-    textoFinal.classList.add("ajustes");
-})
-
-btnDesencriptar.addEventListener("click", () =>{
-    
-    const texto = textoEntrada.value.toLocaleLowerCase();
-    
-    function desencriptar(newText) {
-
-        for (let i = 0; i < remplazos.length; i++) {
-            if (newText.includes(remplazos[i][1])) {
-                newText = newText.replaceAll(remplazos[i][1], remplazos[i][0]);
-            }
+    for(let i = 0; i < conversoes.length; i ++) {
+        if(decodificarTexto.includes(conversoes[i][1])) {
+            decodificarTexto = decodificarTexto.replaceAll(conversoes[i][1], conversoes[i][0]);
         }
-        return newText;
     }
-    const textoDesencriptado= desencriptar(texto);
-
-    textoFinal.innerHTML = textoDesencriptado;
-
-    textoEntrada.value="";
-    munheco.style.display="none";
-    ingTexto.style.display="none";
-    btnCopiar.style.display="block";
-
-    resultados.classList.add("ajustes");
-    textoFinal.classList.add("ajustes");
-})
-
-btnCopiar.addEventListener("click", () => {
-	let texto = textoFinal;
-	texto.select();
-	document.execCommand('copy');
-	alert("Texto Copiado");
-	reset();
-});
+    return decodificarTexto;
+}

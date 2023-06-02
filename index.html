@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"/>
     
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/desktop.css" />
 
     <title>Decodificador</title>
@@ -29,21 +29,39 @@
         </div>
 
         <div class="botoes_parte1">
-          <button id="btnCriptografar" class="botaoCriptografar">Criptografar</button>
-          <button id="btnDescriptografar" class="botaoDescriptografar">Descriptografar</button>
+          <button  class="botaoCriptografar" onclick="btnCriptografar()">Criptografar</button>
+          <button class="botaoDescriptografar" onclick="btnDescriptografar()">Descriptografar</button>
         </div>
       </section>
 
-      <section id="resultado" class="resultado ajustes">
-        <div >
+      <section id="resultado" type="text" class="resultado ajustes">
+        <div>
           <img id="boneco" src="/imagens/boneco.png" class="imagemBoneco" alt="boneco
           ">
-          <textarea id="textAreaFinal" class="textoFinal"  placeholder="Nenhuma mensagem encontrada!"></textarea>
-          <p id="dgtTexto" class="digiteTexto">Digite o texto que você deseja Criptografar ou Descriptografar</p>
-          <button id="btnCopiar" class="botaoCopiar"></button>
+          <textarea id="textAreaFinal" type="text" class="textoFinal"  placeholder="Nenhuma mensagem encontrada!"></textarea>
+          <p id="dgtTexto" class="digiteTexto">Digite o texto que você deseja Criptografar ou Descriptografar</p>       
+        </div>
+        <div class="botaoCopiar">
+          <button id="btnCopiar" onclick="btnCopiar()">Copiar</button>
+        </div>
       </section>
+
     </main>
 
-    <script type="module" src="./script.js"></script>
+    <!-- <footer>
+      <div class="social-media">
+        <p>Desenvolvido por Carolina F. Macioti</p>
+        <a href="https://www.linkedin.com/in/carolina-macioti-dev" class="medias" target="_blank">
+          <i class="linkedin aria-hidden="true"></i>
+        </a>
+        <a href="https://github.com/CarolMacioti" target="_blank" class="medias">
+          <i class="github" aria-hidden="true"></i>
+        </a>
+      </div>
+  
+    </footer> -->
+
+    <script src="./script.js"></script>
+    
   </body>
 </html>
