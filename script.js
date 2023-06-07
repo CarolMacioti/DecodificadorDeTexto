@@ -1,9 +1,9 @@
 const texto1 = document.getElementById("textArea");
 const textAreaFinal = document.getElementById("textAreaFinal");
 const dgtTexto = document.getElementById("dgtTexto");
-const boneco = document.getElementById("boneco");
 
-
+const boneco1 = document.getElementById("boneco1");
+const boneco2 = document.getElementById("boneco2");
 
 /* INVALIDANDO ENTRADA DE ACENTOS E CARACTERES ESPECIAIS diretamente no input de digitação */
 texto1.addEventListener("input", function() {
@@ -23,13 +23,15 @@ console.table(conversoes);
 
 function estilosDeSaida(evento) {
     if(evento == true) {
+        boneco1.style.display = 'none';
+        boneco2.style.display = 'none';
         textAreaFinal.style.display = 'none';
-		boneco.style.display = 'none';
-		dgtTexto.style.fontSize = '1.5rem';
+        dgtTexto.style.fontSize = '1.5rem';
 		dgtTexto.style.margin = '1.5rem';
     } else {
+        boneco1.style.display = 'inline-block';
+        boneco2.style.display = 'inline-block'; 
         textAreaFinal.style.display = 'inline-block';
-        boneco.style.display = 'inline-block';
 		dgtTexto.style.fontSize = '1.0rem';
 		dgtTexto.style.margin = '0.5rem';
 	}
@@ -66,7 +68,16 @@ async function clipboardCopy() {
 
 
 /* BOTÃO CRIPTOGRAFAR */
+
+/* Troca de figuras ao clicar nos botões */
+var imagemPosClick = "boneco2.png";
+var imagemInicial = "boneco1.png";
+
 function btnCriptografar() {
+    document.getElementById("figura").src = imagemPosClick;
+    let guardaImg = imagemPosClick;
+    imagemPosClick = imagemInicial;
+    imagemInicial = guardaImg;
     /* const textoCriptofradado = criptografar(texto1.value); */
     dgtTexto.innerHTML = criptografar(texto1.value);
     /* texto1.value = ''; */
@@ -75,7 +86,11 @@ function btnCriptografar() {
 
 /* BOTÃO DESCRIPTOGRAFAR */
 function btnDescriptografar() {
-        /* const textoDesriptofradado = criptografar(texto1.value); */
+    document.getElementById("figura").src = imagemPosClick;
+    let guardaImg = imagemPosClick;
+    imagemPosClick = imagemInicial;
+    imagemInicial = guardaImg;
+    /* const textoDesriptofradado = criptografar(texto1.value); */
     dgtTexto.innerHTML = descriptografar(texto1.value);
     /* texto1.value = ''; */
     estilosDeSaida(true);

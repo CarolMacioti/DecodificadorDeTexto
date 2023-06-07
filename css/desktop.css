@@ -1,8 +1,8 @@
-:root{
+:root {
     --color-blue: #0A3871;
     --color-grey: #495057;
+    --color-bg: #E5E5E5;
 }
-
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -12,39 +12,41 @@
 }
 
 .logoLina {
-    margin-left: 10px;
-    padding-top: 10px;
-    width: 30%;
+    width: 10%;
+}
+
+.cabecalho h2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--color-blue);
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 body {
-    background: #E5E5E5;
+    background: var(--color-bg);
     display: flex;
+    font-family: "Roboto", sans-serif;
+    flex-direction: column;
     justify-content: center;
     padding: 40px;
 }
 
-
 main {
     display: flex;
-    justify-content: space-between;
-/*     height: 70vh;
-    width: 90vh; */
-    margin: 5vh auto;
+    justify-content: center;
+    height: 90vh;
+    width: 150vh;
+    margin: 4vh auto;
+    padding: 20px;
 }
 
 .parte1 {
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 60vw;
-}
-
-.cabecalho {  
-    margin-left: 10px;
-    padding-top: 10px;
-    width: 15%;
-    line-height: 50%;
+    width: 50vw;
 }
 
 .text-area {
@@ -59,15 +61,18 @@ main {
     padding: 16px;
     font-size: 32px;
     text-transform: lowercase;
-    resize: none; /* REMOVE REDIRECIONADOR */
-    outline: none; /* REMOVE O FOCO */
-	overflow: auto; /* BARRA DE ROLAGEM SÓ QUANDO NECESSÁRIO */
+    resize: none;
+    /* REMOVE REDIRECIONADOR */
+    outline: none;
+    /* REMOVE O FOCO */
+    overflow: auto;
+    /* BARRA DE ROLAGEM SÓ QUANDO NECESSÁRIO */
 }
 
 ::placeholder {
     color: #0A3871;
 }
-    
+
 .text-area:focus {
     outline: none;
 }
@@ -90,26 +95,42 @@ main {
 }
 
 button {
+    border-color: var(--color-blue);
     border-radius: 24px;
+    color: var(--color-blue);
     cursor: pointer;
     font-size: 16px;
     padding: 24px;
     margin: 15px;
     width: 48%;
-  }
+}
+
+.botaoCopiar {
+    /*     align-items: center;
+    display: flex;
+    flex-direction: column; */
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* button:hover {
+    border: 2px solid aqua;
+    font-size: 19px ;
+    transition: .1s;    
+} */
 
 .botaoCriptografar {
     background-color: var(--color-blue);
     border: none;
     color: #E5E5E5;
-    cursor: pointer;
 }
 
 .botaoDescriptografar {
     background-color: transparent;
     border: 1px solid var(--color-blue);
-    color: var(--color-blue);
-    cursor: pointer;
 }
 
 .resultado {
@@ -121,17 +142,13 @@ button {
     display: flex;
     flex-direction: column;
     gap: 32px;
-    height:calc(100% + 48px);
     justify-content: center;
     text-align: center;
-    padding: 32px;
+    padding: 10px;
+
 }
 
-/* .resultado.ajustes{
-    justify-content: space-between;
-} */
-
-.textoFinal{
+.textoFinal {
     border: none;
     color: black;
     resize: none;
@@ -141,12 +158,12 @@ button {
     text-align: center;
 }
 
-.textoFinal .ajustes{
+.textoFinal .ajustes {
     height: 80%;
     font-weight: lighter;
 }
 
-.digiteTexto{
+.digiteTexto {
     color: #495057;
     font-size: 16px;
     text-align: center;
@@ -157,78 +174,90 @@ button {
     font-size: 20px;
     margin: 16px 0;
 }
- 
- .resultado p {
+
+.resultado p {
     font-size: 18px;
 }
 
- .resultado_resultado {
+.resultado {
     font-size: 24px;
     color: #333333;
     margin-bottom: 16px;
     height: 90%;
     line-height: 150%;
     overflow: auto;
- }
- 
+}
 
-
-.botaoCopiar button {
-    align-items: center;
-    background: transparent;
-    border: 1px solid var(--color-blue);
-    border-radius: 18px;
-    color: var(--color-blue);
-    cursor: pointer;
+h1 {
     display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    height: 40px;
+    flex-direction: row;
     justify-content: center;
+    color: var(--color-blue);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+footer ul a{
+    align-items: center;   
+    background: var(--color-bg);
+    color: rgb(102, 100, 100);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-decoration: none;
     width: 100%;
+   
 }
-
-button:hover {
-    border: 2px solid aqua;
-    font-size: 19px ;
-    transition: .1s;    
-}
-
-footer {
-	background: var(--color-grey);
-	margin-top: 10%;
-}
-
-footer div img {
-	border-radius: 100%;
-	position: relative;
-	display: inline-block;
-	margin-left: 240px;
-	max-width: 5%;
-	padding: 15px;
-	width: 940px;
-}
-
-footer p {
-	display: inline-block;
-}
+/* LINKS Redes Sociais */
 
 .social-media {
-	color: #fff;
-	text-align: center;
-	padding: 1rem;
-	display: block;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 30px; 
+    padding: 24px;   
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.637);
+}
+.social-media li{
+    margin: 0 5.4rem 4rem ;
+
 }
 
-.social-media p {
-	display: block;
-	margin-bottom: 0.5rem;
-	font-size: 0.8rem;
+.logos {
+    color: rgb(102, 100, 100);
+    height: 60px;
+    text-shadow: 3px 4px 2px rgba(0, 0, 0, 0.29);
+    width: 60px;
 }
 
-.social-media a {
-	font-size: 1.5rem;
-	text-decoration: none;
-	color: white;
-	cursor: pointer;
-} 
+.social-media-item {
+    font-size: 22px;
+    justify-content: space-between;
+    border-radius: 10px;
+    color: rgb(102, 100, 100);
+    font-size: 1.5rem;
+    padding: 1.3rem;
+    margin: 1rem;
+}
+
+.social-media-item:hover{
+    box-shadow: 3px 4px 2px rgb(102, 100, 100);
+    font-size: 34px ;
+    transition: .1s;  
+}
+
+
+/* LOGO + COPYRIGHT */
+.copyright {
+    text-align: center;
+    color: rgb(102, 100, 100);
+    font-size: 13px;
+
+    margin: 20px;
+}
+.logo_copyright {
+    margin: 10px;
+    width: 20%;
+}

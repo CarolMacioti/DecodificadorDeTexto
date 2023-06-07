@@ -5,63 +5,111 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     
+
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/desktop.css" />
 
-    <title>Decodificador</title>
-
+    <title>Decodificador @lina_developer</title>
   </head>
 
   <body>
     <header class="cabecalho">
-      <img class="logoLina" src="./imagens/logo.png" alt="logo Lina_developer" />
+      <img class="logoLina"src="./imagens/logo.png" alt="logo Lina_developer"/><h2>Decodificador de Texto</h2>
+      
     </header>
 
     <main>
       <section class="parte1">
-        <textarea id="textArea" class="text-area" cols="41" rows="4" placeholder="Digite seu texto"></textarea>
+        <textarea
+          id="textArea"
+          class="text-area"
+          cols="41"
+          rows="4"
+          placeholder="Digite seu texto"
+        ></textarea>
 
         <div class="alerta">
-          <p><img src="./imagens/iconeExclamacao.png">apenas letras minúsculas e sem acentos.</p>
+          <p>
+            <img src="./imagens/iconeExclamacao.png" />apenas letras minúsculas
+            e sem acentos.
+          </p>
         </div>
 
         <div class="botoes_parte1">
-          <button  class="botaoCriptografar" onclick="btnCriptografar()">Criptografar</button>
-          <button class="botaoDescriptografar" onclick="btnDescriptografar()">Descriptografar</button>
+          <button class="botaoCriptografar" onclick="btnCriptografar()">
+            Criptografar
+          </button>
+          <button class="botaoDescriptografar" onclick="btnDescriptografar()">
+            Descriptografar
+          </button>
         </div>
       </section>
 
-      <section id="resultado" type="text" class="resultado ajustes">
+      <section id="resultado" class="resultado">
         <div>
-          <img id="boneco" src="/imagens/boneco.png" class="imagemBoneco" alt="boneco
-          ">
-          <textarea id="textAreaFinal" type="text" class="textoFinal"  placeholder="Nenhuma mensagem encontrada!"></textarea>
-          <p id="dgtTexto" class="digiteTexto">Digite o texto que você deseja Criptografar ou Descriptografar</p>       
+          <!-- Figura inicial -->
+          <img
+            id="figura"
+            src="boneco1.png"
+            class="imagemBoneco"
+            alt="boneco
+          "
+          />
+
+          <textarea
+            id="textAreaFinal"
+            type="text"
+            class="textoFinal"
+            placeholder="Nenhuma mensagem encontrada!"
+          ></textarea>
+          <p id="dgtTexto" class="digiteTexto">
+            Digite o texto que você deseja Criptografar ou Descriptografar
+          </p>
         </div>
         <div class="botaoCopiar">
           <button id="btnCopiar" onclick="btnCopiar()">Copiar</button>
         </div>
       </section>
-
     </main>
 
-    <!-- <footer>
-      <div class="social-media">
-        <p>Desenvolvido por Carolina F. Macioti</p>
-        <a href="https://www.linkedin.com/in/carolina-macioti-dev" class="medias" target="_blank">
-          <i class="linkedin aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/CarolMacioti" target="_blank" class="medias">
-          <i class="github" aria-hidden="true"></i>
-        </a>
-      </div>
-  
-    </footer> -->
+    <h1>Redes Sociais</h1>
+    
+<footer>
+  <div>
+    <ul class="social-media">
+  <!-- Github -->
+        <li class="social-media-item">
+          <a
+          href="https://github.com/CarolMacioti"
+          target="_blank"><ion-icon name="logo-github" class="logos"></ion-icon>Github</a>
+        </li>
+  <!-- LinkedIn -->
+        <li class="social-media-item">
+          <a
+          href="https://www.linkedin.com/in/carolina-macioti-dev"
+          target="_blank"><ion-icon name="logo-linkedin" class="logos"></ion-icon>LinkedIn</a>
+        </li>
+  <!-- Instagram -->
+        <li class="social-media-item">
+          <a
+          href="https://www.instagram.com/lina_developer/"
+          target="_blank"><ion-icon name="logo-instagram" class="logos"></ion-icon>Instagram</a>
+        </li>
+      </ul>
+  </div>
+</footer>
+
+    <div class="copyright">
+      <img class="logo_copyright" src="./imagens/logo.png">
+        <p>&copy; Copyright | Desenvolvido por Carolina Farias Macioti</p>
+    </div>
 
     <script src="./script.js"></script>
-    
+    <script  type = "module"  src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script> 
+    <script  nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script >
   </body>
 </html>
